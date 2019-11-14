@@ -1,7 +1,7 @@
 {
   "name": "edge-login-ui-rn",
   "version": "0.6.0",
-  "description": "Edge login UI components, as a React Native library",
+  "description": "SatoshiWallet login UI components created using the React Native library",
   "keywords": [
     "Airbitz",
     "Edge",
@@ -11,9 +11,9 @@
     "key management",
     "security"
   ],
-  "homepage": "https://github.com/EdgeApp/edge-login-ui",
+  "homepage": "https://github.com/SatoshiWallet/login-ui",
   "license": "SEE LICENSE IN LICENSE",
-  "author": "Airbitz, Inc.",
+  "author": "Airbitz, Inc & AHL Internation PTE Ltd",
   "files": [
     "android/**",
     "edge-login-ui-rn.podspec",

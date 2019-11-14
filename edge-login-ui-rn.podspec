@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/EdgeApp/edge-login-ui.git" }
+  s.source       = { :git => "https://github.com/SatoshiWallet/login-ui.git" }
   s.source_files = "ios/**/*.{h,m}"
 
   s.dependency "React"
