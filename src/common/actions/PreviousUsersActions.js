@@ -1,12 +1,61 @@
 // @flow
 
 import type { DiskletFolder } from 'disklet'
+import { makeReactNativeDisklet } from 'disklet'
 import type { EdgeContext } from 'edge-core-js'
 
 import { isTouchEnabled } from '../../native/keychain'
 import type { Dispatch, GetState, Imports } from '../../types/ReduxTypes'
 import * as Constants from '../constants'
 import { dispatchActionWithData } from './'
+
+export type LoginUserInfo = {
+  username: string,
+  pinEnabled: boolean,
+  touchEnabled: boolean
+}
+
+/**
+ * The payload included in the 'SET_PREVIOUS_USERS' redux action.
+ */
+export type PreviousUsersState = {
+  userList: LoginUserInfo[],
+  lastUser?: LoginUserInfo,
+
+  usernameOnlyList: string[],
+  filteredUsernameList: string[]
+}
+
+function sortUserList(
+  lastUsers: string[],
+  userList: LoginUserInfo[]
+): LoginUserInfo[] {
+  if (!userList || userList.length === 0) {
+    return []
+  }
+  const limitLastUsers = lastUsers.length > 0 ? lastUsers.slice(0, 3) : []
+  const detailedLastUsers: LoginUserInfo[] = []
+  for (const lastUser of limitLastUsers) {
+    const info = userList.find(user => user.username === lastUser)
+    if (info != null) detailedLastUsers.push(info)
+  }
+  const filteredUserList = userList.filter(
+    user => !limitLastUsers.find(lastUser => user.username === lastUser)
+  )
+  const sortedUserList = filteredUserList.sort((a: Object, b: Object) => {
+    const stringA = a.username.toUpperCase()
+    const stringB = b.username.toUpperCase()
+    if (stringA < stringB) {
+      return -1
+    }
+    if (stringA > stringB) {
+      return 1
+    }
+    return 0
+  })
+
+  return [...detailedLastUsers, ...sortedUserList]
+}
 
 async function getDiskStuff(context: EdgeContext, folder: DiskletFolder) {
   const userList = await context.listUsernames().then(usernames =>
@@ -23,14 +72,26 @@ async function getDiskStuff(context: EdgeContext, folder: DiskletFolder) {
     )
   )
 
-  const lastUser = await folder
-    .file('lastuser.json')
-    .getText() // setText for later. username
+  const disklet = makeReactNativeDisklet()
+  const lastUsers = await disklet
+    .getText('lastusers.json')
     .then(text => JSON.parse(text))
-    .then(json => json.username)
-    .catch(e => userList[0])
-
-  return { lastUser, userList }
+    .catch(_ => [])
+  if (lastUsers && lastUsers.length > 0) {
+    return {
+      lastUser: lastUsers[0],
+      userList: sortUserList(lastUsers, userList)
+    }
+  }
+  const lastUser = await disklet
+    .getText('lastuser.json')
+    .then(text => JSON.parse(text))
+    .then(json => (json && json.username ? json.username : ''))
+    .catch(_ => '')
+  return {
+    lastUser,
+    userList: sortUserList([lastUser], userList)
+  }
 }
 
 export function getPreviousUsers() {
@@ -38,8 +99,7 @@ export function getPreviousUsers() {
     const { context, folder, username } = imports
     getDiskStuff(context, folder).then((data: Object) => {
       const focusUser = username || data.lastUser
-      if (data.lastUser) {
-        data.usersWithPinList = []
+      if (data.userList && data.userList.length > 0) {
         data.usernameOnlyList = []
         data.filteredUsernameList = []
         data.userList.forEach(function(element) {
@@ -49,9 +109,6 @@ export function getPreviousUsers() {
               pinEnabled: element.pinEnabled,
               touchEnabled: element.touchEnabled
             }
-          }
-          if (element.pinEnabled) {
-            data.usersWithPinList.push(element.username)
           }
           data.usernameOnlyList.push(element.username)
           data.filteredUsernameList.push(element.username)
