@@ -5,6 +5,7 @@ import { View } from 'react-native'
 
 import * as Assets from '../../assets/'
 import { BackgroundImage, Spinner } from '../common'
+import * as Constants from '../../../common/constants'
 
 type Props = {
   styles: Object,
@@ -27,6 +28,6 @@ export default class LoadingScreenComponent extends Component<Props> {
 
   renderSpinner = () => {
     const { CenteredSpinnerStyle } = this.props.styles
-    return <Spinner style={CenteredSpinnerStyle} />
+    return <Spinner style={CenteredSpinnerStyle} color={Constants.WHITE}/>
   }
 }

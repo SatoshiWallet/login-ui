@@ -10,7 +10,7 @@ type Props = {
 const Spinner = (props: Props) => {
   return (
     <View style={props.style}>
-      <ActivityIndicator size={props.size || 'large'} />
+      <ActivityIndicator size={props.size || 'large'} color={props.color || 'default'}/>
     </View>
   )
 }

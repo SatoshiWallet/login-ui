@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, TouchableHighlight, View } from 'react-native'
 
 import { Spinner } from './Spinner'
+import * as Constants from '../../../common/constants'
 
 type Props = {
   label: string,
@@ -73,7 +74,7 @@ class Button extends Component<Props, State> {
     }
     return (
       <View>
-        <Spinner size="small" />
+        <Spinner size="small" color={Constants.WHITE}/>
       </View>
     )
   }
