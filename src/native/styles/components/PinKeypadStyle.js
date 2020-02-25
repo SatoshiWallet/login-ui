@@ -21,7 +21,7 @@ const PinKeypadStyle = {
   },
   keypadColumn: {
     flex: 1,
-    borderColor: Constants.ACCENT_MINT,
+    borderColor: Constants.WHITE,
     borderWidth: 1,
     margin: scale(2),
     borderRadius: 5,
@@ -41,12 +41,12 @@ const PinKeypadStyle = {
   keypadKeys: {
     textAlign: 'center',
     fontSize: scale(14),
-    color: Constants.ACCENT_MINT
+    color: Constants.WHITE
   },
   keypadKeysBack: {
     textAlign: 'center',
     fontSize: scale(30),
-    color: Constants.ACCENT_MINT
+    color: Constants.WHITE
   }
 }
 
