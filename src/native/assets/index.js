@@ -2,8 +2,8 @@
 
 const LOGIN_BACKGROUND = require('./login_bg.jpg')
 const LOGO_DOT = require('./logoHolderDot.png')
-const LOGO_BIG = require('./edgeLogo/SatoshiWallet_logo_L.png')
-const LOGO_SMALL = require('./edgeLogo/SatoshiWallet_logo_S.png')
+const LOGO_BIG = require('./edgeLogo/S_Wallet_logo_L.png')
+const LOGO_SMALL = require('./edgeLogo/S_Wallet_logo_S.png')
 const REVIEW_CHECKED = require('./icons/review/check.png')
 const REVIEW_UNCHECKED = require('./icons/review/unchecked.png')
 const STANDARD_CHECKED = require('./icons/standard/password_show.png')
