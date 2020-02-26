@@ -10,7 +10,7 @@ const MaterialInput = {
     minHeight: scale(Constants.LOGIN_LABEL_HEIGHT)
   },
   baseColor: Constants.WHITE,
-  tintColor: Constants.ACCENT_MINT,
+  tintColor: Constants.WHITE,
   errorColor: Constants.ACCENT_RED,
   textColor: Constants.WHITE,
   affixTextStyle: {

@@ -50,7 +50,7 @@ const FourDotInputStyle = {
     width: scale(30)
   },
   circleSected: {
-    backgroundColor: Colors.ACCENT_MINT,
+    backgroundColor: Colors.ACCENT_ORANGE,
     borderWidth: scale(2),
     borderColor: Colors.WHITE,
     borderRadius: scale(15),

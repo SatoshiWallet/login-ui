@@ -139,7 +139,7 @@ const PinLoginScreenStyle = {
   },
   touchImageText: {
     marginTop: scale(8),
-    color: Constants.ACCENT_MINT
+    color: Constants.ACCENT_ORANGE
   },
   keypad: Styles.PinKeypadStyle
 }

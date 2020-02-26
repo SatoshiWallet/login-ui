@@ -8,7 +8,7 @@ export const OtpModalStyle = {
     color: Constants.ACCENT_RED
   },
   otpAuthenticationModalIcon: {
-    color: Constants.ACCENT_MINT,
+    color: Constants.ACCENT_ORANGE,
     fontSize: scale(56)
   }
 }

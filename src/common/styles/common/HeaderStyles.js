@@ -59,7 +59,7 @@ const HeaderContainerStyle = {
     fontSize: scale(11),
     width: '100%',
     textAlign: 'center',
-    color: Constants.ACCENT_MINT
+    color: Constants.ACCENT_ORANGE
   },
   textButton: {
     upStyle: { ...Styles.TextOnlyButtonUpStyle, width: '100%' },
@@ -139,7 +139,7 @@ const HeaderContainerScaledStyle = {
     fontSize: scale(11),
     width: '100%',
     textAlign: 'center',
-    color: Constants.ACCENT_MINT
+    color: Constants.ACCENT_ORANGE
   },
   textButton: {
     upStyle: { ...Styles.TextOnlyButtonUpScaledStyle, width: '100%' },

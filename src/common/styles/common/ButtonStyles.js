@@ -89,12 +89,12 @@ const TertiaryButtonUpStyle = {
   alignItems: 'center',
   justifyContent: 'space-around',
   borderRadius: scale(3),
-  borderColor: Constants.ACCENT_MINT,
+  borderColor: Constants.WHITE,
   borderWidth: Constants.BUTTON_BORDER_STROKE
 }
 
 const TertiaryButtonTextUpStyle = {
-  color: Constants.ACCENT_MINT,
+  color: Constants.WHITE,
   fontSize: scale(22),
   fontFamily: Constants.FONTS.fontFamilyRegular,
   width: '100%',
@@ -102,13 +102,13 @@ const TertiaryButtonTextUpStyle = {
 }
 
 const TertiaryButtonDownStyle = {
-  backgroundColor: Constants.ACCENT_MINT,
+  backgroundColor: Constants.WHITE,
   width: Constants.BUTTON_WIDTH_1,
   height: scale(Constants.BUTTON_HEIGHT),
   alignItems: 'center',
   justifyContent: 'space-around',
   borderRadius: scale(3),
-  borderColor: Constants.ACCENT_MINT,
+  borderColor: Constants.WHITE,
   borderWidth: Constants.BUTTON_BORDER_STROKE
 }
 
