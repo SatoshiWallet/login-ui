@@ -96,6 +96,7 @@ const TertiaryButtonUpStyle = {
 const TertiaryButtonTextUpStyle = {
   color: Constants.WHITE,
   fontSize: scale(22),
+  lineHeight: scale(22),
   fontFamily: Constants.FONTS.fontFamilyRegular,
   width: '100%',
   textAlign: 'center'
