@@ -51,20 +51,23 @@ const NewAccountWelcomeScreenStyle = {
   exitBackButtonStyle: {
     backButton: {
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
+      flex: 1
     },
     backIconStyle: {
+      position: 'relative',
+      top: scale(1),
       paddingLeft: scale(10),
-      paddingRight: scale(5),
-      fontSize: scale(20),
+      paddingRight: scale(6),
       color: Constants.SECONDARY
     },
     sideText: {
       color: Constants.SECONDARY,
-      fontSize: scale(18)
+      fontSize: scale(14)
     },
     icon: {
-      color: Constants.SECONDARY
+      color: Constants.SECONDARY,
+      fontSize: scale(25)
     },
     default: {
       backgroundColor: Constants.TRANSPARENT,

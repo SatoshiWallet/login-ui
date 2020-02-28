@@ -113,7 +113,7 @@ const MaterialInputOnWhiteScaled = {
     marginTop: scale(15)
   },
   baseColor: Constants.PRIMARY,
-  tintColor: Constants.SECONDARY,
+  tintColor: Constants.ACCENT_BLUE,
   errorColor: Constants.ACCENT_RED,
   textColor: Constants.BLACK,
   affixTextStyle: {
