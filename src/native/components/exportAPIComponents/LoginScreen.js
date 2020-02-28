@@ -8,7 +8,6 @@ import type { Store } from 'redux'
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunk from 'redux-thunk'
 
-import { updateFontStyles } from '../../../common/constants/Fonts'
 import reducers from '../../../common/reducers'
 import { checkingForOTP } from '../../../common/util/checkingForOTP.js'
 import type { Imports } from '../../../types/ReduxTypes'
@@ -82,10 +81,6 @@ class LoginScreen extends Component<Props> {
         this.props.onLogin(error)
       })
     ]
-  }
-
-  componentWillMount() {
-    updateFontStyles(this.props) // Can we move this to the constructor?
   }
 
   componentWillUnmount() {
