@@ -25,7 +25,7 @@ const NewAccountWelcomeScreenStyle = {
   instructionsText: {
     fontSize: scale(Styles.CreateAccountFont.defaultFontSize),
     fontFamily: Constants.FONTS.fontFamilyRegular,
-    color: Constants.GRAY_2,
+    color: Constants.WHITE,
     textAlign: 'center',
     paddingLeft: scale(20),
     paddingRight: scale(20)
@@ -33,7 +33,7 @@ const NewAccountWelcomeScreenStyle = {
   callToAction: {
     fontSize: scale(Styles.CreateAccountFont.defaultFontSize),
     fontFamily: Constants.FONTS.fontFamilyRegular,
-    color: Constants.GRAY_2,
+    color: Constants.WHITE,
     textAlign: 'center'
   },
   nextButton: {
@@ -59,19 +59,19 @@ const NewAccountWelcomeScreenStyle = {
       top: scale(1),
       paddingLeft: scale(10),
       paddingRight: scale(6),
-      color: Constants.SECONDARY
+      color: Constants.WHITE
     },
     sideText: {
-      color: Constants.SECONDARY,
+      color: Constants.WHITE,
       fontSize: scale(14)
     },
     icon: {
-      color: Constants.SECONDARY,
+      color: Constants.WHITE,
       fontSize: scale(25)
     },
     default: {
       backgroundColor: Constants.TRANSPARENT,
-      color: Constants.SECONDARY
+      color: Constants.WHITE
     }
   }
 }

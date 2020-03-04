@@ -10,6 +10,7 @@ import T from '../../../components/common/FormattedText.js'
 import { ImageHeaderComponent } from '../../abSpecific/ImageHeaderComponent'
 import { Button, HeaderBackButton } from '../../common'
 import SafeAreaView from '../../common/SafeAreaView.js'
+import LinearGradient from 'react-native-linear-gradient'
 
 type Props = {
   styles: Object,
@@ -27,8 +28,8 @@ export default class NewAccountWelcomeScreenComponent extends Component<
     const { NewAccountWelcomeScreenStyle } = this.props.styles
 
     return (
-      <SafeAreaView>
-        <View style={NewAccountWelcomeScreenStyle.screen}>
+      <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#3173ca', '#0c7ab7']} style={NewAccountWelcomeScreenStyle.screen}>
+        <SafeAreaView>
           <View style={NewAccountWelcomeScreenStyle.row1}>
             <HeaderBackButton
               onPress={this.props.exitScreen}
@@ -68,8 +69,8 @@ export default class NewAccountWelcomeScreenComponent extends Component<
               label={s.strings.get_started}
             />
           </View>
-        </View>
-      </SafeAreaView>
+        </SafeAreaView>
+      </LinearGradient>
     )
   }
   /* onNextPress () {
@@ -79,3 +80,4 @@ export default class NewAccountWelcomeScreenComponent extends Component<
     this.props.exitScreen()
   } */
 }
+
